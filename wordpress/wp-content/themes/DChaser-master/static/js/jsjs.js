@@ -3,16 +3,22 @@
 	function change(){
 		$height = $(document).scrollTop();
 		if ( $height > 10 ){
-			$('.header-b').css("background-color","#666");
-			$('.header-b').css("opacity","0.9");
-			$('.index').css("color","#fff");
-			$('.index:hover').css("color","red");
-			$('.shou').css("color","red");
+			$('.header-b').css("background-color","rgba(0,0,0,0.5)");
 		}else if( $height < 10 ){
-			$('.header-b').css("background-color","#fff");
-			$('.header-b').css("opacity","1");
-			$('.index').css("color","#000");
-			$('.index:hover').css("color","red");
-			$('.shou').css("color","red");
+			$('.header-b').css("background-color","rgba(255,255,255,0.0)");
 		}
 	}
+
+	$('#prev').click(function(){
+		$("#pic1").animate({
+			left:'50px',
+			opacity:'0.5'
+		},"slow"});
+		$("#pic2").animate({
+			left:'50px',
+			opacity:'1'
+		},"slow"});
+	});
+	$('#next').click(function(){
+		
+	});

@@ -22,3 +22,6 @@
     <script src="<?php bloginfo('template_url'); ?>/static/js/jsjs.js" type="text/javascript"></script>
 </head>
 <body >
+<!-- main start -->
+<body class="wrapper">
+    
