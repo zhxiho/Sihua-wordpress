@@ -447,7 +447,7 @@ function Get_Random_Post($limit=5,$cut_length=44){
 }
 
 // 获得热评文章
-function simple_get_most_viewed($posts_num=8){
+function simple_get_most_viewed($posts_num=1){
     global $wpdb;
     $sql = "SELECT ID,post_title,post_date,comment_count,post_content
             FROM $wpdb->posts
@@ -458,12 +458,51 @@ function simple_get_most_viewed($posts_num=8){
     $posts = $wpdb->get_results($sql);
     if(is_array($posts)){
         foreach($posts as $post){
-            $str .="<li><a href='".get_permalink($post->ID)."'><h4>".mb_strimwidth($post->post_title,0,38).
-                "</h4></a><span class='date'>".$post->post_date."&nbsp;".$post->comment_count."&nbsp;条评论</span><p>".strip_tags(mb_strimwidth($post->post_content,0,200,'......'))."</p></li>";
+            $str .="<a href='".get_permalink($post->ID)."'><p class='news-first-title'>".mb_strimwidth($post->post_title,0,38).
+                "</p><p class='news-first-abstract'>".strip_tags(mb_strimwidth($post->post_content,0,200,'......'))."</p></a>";
         }
     }
     echo $str;
 }
+
+// 获得热评文章
+function simple_get_most_viewed1($posts_num=2){
+    global $wpdb;
+    $sql = "SELECT ID,post_title,post_date,comment_count,post_content
+            FROM $wpdb->posts
+           WHERE post_type = 'post'
+           AND ($wpdb->posts.`post_status` = 'publish' OR $wpdb->posts.`post_status` = 'inherit')
+           ORDER BY comment_count DESC LIMIT 0 , $posts_num ";
+    $str = "";
+    $posts = $wpdb->get_results($sql);
+    if(is_array($posts)){
+        foreach($posts as $post){
+            $str .="<div class='news-lists'><p class='news-title'><a href='".get_permalink($post->ID)."'>".mb_strimwidth($post->post_title,0,38).
+                "</a><span>".$post->post_date."</span></p></div>";
+        }
+    }
+    echo $str;
+}
+
+// 获得热评文章
+// function simple_get_most_viewed($posts_num=3){
+//     global $wpdb;
+//     $sql = "SELECT ID,post_title,post_date,comment_count,post_content
+//             FROM $wpdb->posts
+//            WHERE post_type = 'post'
+//            AND ($wpdb->posts.`post_status` = 'publish' OR $wpdb->posts.`post_status` = 'inherit')
+//            ORDER BY comment_count DESC LIMIT 0 , $posts_num ";
+//     $str = "";
+//     $posts = $wpdb->get_results($sql);
+//     if(is_array($posts)){
+//         foreach($posts as $post){
+//             $str .="<li><a href='".get_permalink($post->ID)."'><h4>".mb_strimwidth($post->post_title,0,38).
+//                 "</h4></a><span class='date'>".$post->post_date."&nbsp;".$post->comment_count."&nbsp;条评论</span><p>".strip_tags(mb_strimwidth($post->post_content,0,200,'......'))."</p></li>";
+//         }
+//     }
+//     echo $str;
+// }
+
 
 //评论列表
 if (!function_exists('lovnvns_comment')):

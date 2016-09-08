@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width;initial-scale=1,user-scalable=no" />
     <meta name="renderer" content="webkit">
     <?php include('lib/seo.php'); ?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -18,5 +18,7 @@
 		$('.flexslider').flexslider();
 	});
     </script>
+    <script src="<?php bloginfo('template_url'); ?>/static/js/js.js" type="text/javascript"></script>
+    <script src="<?php bloginfo('template_url'); ?>/static/js/jsjs.js" type="text/javascript"></script>
 </head>
 <body >

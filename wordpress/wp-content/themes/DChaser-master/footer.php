@@ -1,65 +1,41 @@
-    </div>
-    <!-- /Main Container -->
-    <!-- Footer -->
-    <div id="footer">
-        <div class="container clearfix">
-            <div class="footer-content">
-                <!-- Tags -->
-                <div class="one-fourth tags" style="padding-right: 15px;">
-                    <h5>云标签</h5>
-                    <?php wp_tag_cloud('smallest=12&largest=16&unit=px&number=65&orderby=count&order=RAND');?>
-                </div>
-                <!-- /Tags -->
-
-                <!-- my_entry_published -->
-                <div class="one-fourth  link-path">
-                    <h5>日志归档</h5>
-                    <ul style="list-style-type: disc;margin-left: 25px;">
-                    <?php wp_get_archives('type=monthly&limit=12&show_post_count=true'); ?>
-                    </ul>
-                </div>
-                <!-- /my_entry_published -->
-
-                <!-- Contacts -->
-                <div class="one-fourth link-path">
-                    <h5>友情链接</h5>
-                    <p class="friend-links"><a href="<?php echo get_option("Dchaser_links"); ?>">更多友链 »</a></p>
-                    <ul class="friends-ul">
-                    <?php wp_list_bookmarks('orderby=link_id&categorize=0&title_li='); ?>
-    	           </ul>
-                </div>
-                <!-- /Contacts -->
-
-                <!-- About -->
-                <div class="one-fourth last link-path">
-                    <h5>关于我们</h5>
-                    <p><?php echo get_option("Dchaser_aboutus"); ?></p>
-                </div>
-                <!-- /About -->
+<div class="wrapper" style="background-color:#292929;">
+    <div class="minwrapper padding" style="background-color:;">
+        <div class="footer-list flex">
+            <div class="footer-1" style="background-color:;">
+                <p class="footer-title">产品</p>
+                <p class="footer-info">资料下载</p>
+                <p class="footer-info">申请试用</p>
             </div>
-
-            <div class="info clearfix link-path">
-                <!-- Copyright -->
-                <ul class="copyright">
-                    <li>Copyright &copy; 2014 <strong><a href="<?php bloginfo('siteurl'); ?>/"><?php bloginfo('name');?></a></strong> . All rights reserved</li>
-                    <li>Powered by Wordpress </li>
-                    <!--
-                    * 尊重原创，请保留版权信息
-                    * 您的支持，将是我更新的动力
-                    -->
-                    <li>Designed by <a href="http://dearb.me" target="_blank">BelinChung</a></li>
-                    <li><a href="http://www.miibeian.gov.cn/" target="_blank" title="备案信息"><?php echo get_option("Dchaser_beian"); ?></a></li>
-                    <li><?php echo get_option("Dchaser_stat"); ?></li>
-                </ul>
-                <!-- /Copyright -->
+            <div class="footer-1" style="background-color:;">
+                <p class="footer-title">合作</p>
+                <p class="footer-info">渠道政策</p>
+                <p class="footer-info">合作申请</p>
+                <p class="footer-info">联系我们</p>
+            </div>
+            <div class="footer-1" style="background-color:;">
+                <p class="footer-title">关于</p>
+                <p class="footer-info">了解思华</p>
+                <p class="footer-info">加入我们</p>
+            </div>
+            <div class="footer-2" style="background-color:;">
+                <p class="footer-title">联系</p>
+                <p class="footer-info">电话：(021)61421822</p>
+                <p class="footer-info">传真：(021)61421822</p>
+                <p class="footer-info">地址：上海市浦东新区博云路22号</p>
+            </div>
+            <div class="footer-3" style="background-color:;">
+                <p class="footer-title"></p>
+                <p class="footer-info"></p>
+            </div>
+            <div class="footer-4" style="background-color:;">
+                <p class="footer-title-01">扫一扫，关注思华</p>
+                <img class="footer-pic" src="<?php bloginfo('template_url'); ?>/static/img/img/erweima.png" alt="" />
             </div>
         </div>
-
     </div>
-    <!-- /Footer -->
-<?php
-wp_footer();
-do_action('gk_show_debug');//显示调试信息
-?>
+    <div class="Title loop-info" style="background-color:;">
+        <p>版权信息代码</p>
+    </div>
+</div>
 </body>
 </html>
