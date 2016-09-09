@@ -1,6 +1,6 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width;initial-scale=1,user-scalable=no" />
     <meta name="renderer" content="webkit">
     <?php include('lib/seo.php'); ?>

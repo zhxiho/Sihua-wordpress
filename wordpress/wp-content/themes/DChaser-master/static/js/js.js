@@ -1,6 +1,19 @@
 $(document).ready(function(){
 
 	
+	$('#prev').click(function(){
+		$("#pic1").animate({
+			left:'50px',
+			opacity:'0.5'
+		},"slow"});
+		$("#pic2").animate({
+			left:'50px',
+			opacity:'1'
+		},"slow"});
+	});
+	$('#next').click(function(){
+		
+	});
 	
 
 	// $('.partner-prev').click(function(){

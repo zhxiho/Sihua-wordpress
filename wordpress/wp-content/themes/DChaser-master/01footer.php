@@ -1,4 +1,4 @@
-        <div class="wrapper" style="background-color:#292929;">
+        <div class="content-wrapper" style="background-color:#333333;">
             <div class="minwrapper padding" style="background-color:;">
                 <div class="footer-list flex">
                     <div class="footer-1" style="background-color:;">
