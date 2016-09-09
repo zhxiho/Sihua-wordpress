@@ -73,11 +73,11 @@ get_header();
 	        <div class="Title" style="background-color:;">
 	            <p>行业解决方案</p>
 	        </div>
-	        <div class="project-list">
+	        <div class="project-list" style="background-color:;">
 	            <!-- 获取新闻动态文章 -->
 	            <?php
 	                global $query_string;
-	                query_posts($query_string.'&showposts=5&caller_get_posts=1');
+	                query_posts($query_string.'&showposts=8&caller_get_posts=6');
 	                $i = 0;
 	                if (have_posts()){
 	                    while (have_posts()){
@@ -96,37 +96,12 @@ get_header();
 	                          echo "' class='project-pic' /><div class='project-info'>";
 	                          echo "<p>";
 	                          echo the_title();
-	                          echo "</p></div></a>";
-	                          $i ++;
-	                        }
-	                    }
-	                }
-	            ?>
-	        </div>
-	         <div class="project-list" style="margin-top:-100px;">
-	            <!-- 获取新闻动态文章 -->
-	            <?php
-	                global $query_string;
-	                query_posts($query_string.'&showposts=5&caller_get_posts=1');
-	                $i = 0;
-	                if (have_posts()){
-	                    while (have_posts()){
-	                        the_post();
-	                        $content = $post->post_content;
-	                        $searchimages = '~<img [^>]* />~';
-	                        preg_match_all( $searchimages, $content, $pics );
-	                        $iNumberOfPics = count($pics[0]);
-	                        if ( $iNumberOfPics > 0 &&$i <6) {
-	                          echo "<a href=' ";
-	                          echo the_permalink();
-	                          echo "' class='project'><img src=' ";
-	                          echo catch_that_image();
-	                          echo "' alt='";
-	                          echo the_title();
-	                          echo "' class='project-pic' /><div class='project-info'>";
-	                          echo "<p>";
-	                          echo the_title();
-	                          echo "</p></div></a>";
+	                          echo "</p><div class='project-icon' ";
+
+	                          echo " ><div class='icon'></div>
+	                          <div class='icon'></div>
+	                          <div class='icon'></div>
+	                          </div></div></a>";
 	                          $i ++;
 	                        }
 	                    }
@@ -155,7 +130,7 @@ get_header();
 	                </div>
 	                    <?=simple_get_most_viewed1(); ?>
 	            </div>
-	            <div class="news" style="background-color:;margin-right:0px;">
+	            <div class="news news02" style="background-color:;">
 	                <div class="news-left" style="background-color:;">
 	                    <p class="news-kind" style="background-color:;">
 	                        媒体报导

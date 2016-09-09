@@ -17,6 +17,9 @@
 	$(window).load(function() {
 		$('.flexslider').flexslider();
 	});
+    
+    
+
     </script>
     <script src="<?php bloginfo('template_url'); ?>/static/js/js.js" type="text/javascript"></script>
     <script src="<?php bloginfo('template_url'); ?>/static/js/jsjs.js" type="text/javascript"></script>
