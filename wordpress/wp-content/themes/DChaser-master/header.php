@@ -13,7 +13,10 @@
                     <a href="" class="index">首页</a>
                 </li>
                 <li class="nav-ul-li">
-                    <a href="" class="index">产品中心</a>
+                    <a href="" class="index">
+                        产品中心
+                        <div class="down-list"><span></span></div>
+                    </a>
                     <div class="menu-list">
                         <div class="item">
                             <p class="item-title">互动媒体</p>
@@ -43,13 +46,19 @@
                     </div>
                 </li>
                 <li class="nav-ul-li">
-                    <a href="" class="index">合作伙伴</a>
+                    <a href="" class="index">合作伙伴
+                        <div class="down-list"><span></span></div>
+                    </a>
                 </li>
                 <li class="nav-ul-li">
-                    <a href="" class="index">服务支持</a>
+                    <a href="" class="index">服务支持
+                        <div class="down-list"><span></span></div>
+                    </a>
                 </li>
                 <li class="nav-ul-li">
-                    <a href="" class="index">关于我们</a>
+                    <a href="" class="index">关于我们
+                        <div class="down-list"><span></span></div>
+                    </a>
                 </li>
             </ul>
         </div>
