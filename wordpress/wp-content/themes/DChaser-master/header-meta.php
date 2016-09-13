@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width;initial-scale=1,user-scalable=no" />
+    <meta name="renderer" content="ie-comp"/>
     <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-Compatible" content="IE=7,IE=9"/>
+    <meta http-equiv="x-ua-compatible" content="IE=7,9"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1;"/> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
     <?php include('lib/seo.php'); ?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php

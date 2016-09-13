@@ -62,6 +62,59 @@
                 </li>
             </ul>
         </div>
+        <div class="more">
+        <div id="nav-more" class="nav-more">
+            <img class="more-pic" src="<?php bloginfo('template_url'); ?>/static/img/icon/menu.png" alt="导航栏"/>
+            <div class="more-menu">
+                <div class="more-menu-nav">
+                    <ul class="more-list">
+                        <li id="shouye" class="more-li">
+                            <a href="" class="index">首页</a>
+                        </li>
+                        <li class="more-li">
+                            <a href="" class="index">
+                                产品中心
+                                <div class="more-down"><span></span></div>
+                            </a>
+                            <ul class="more-li-list">
+                                <li class="more-item">
+                                    <p class="more-item-title">互动媒体</p>
+                                </li>
+                                <li class="more-item">
+                                    <p class="more-item-title">虚拟化</p>
+                                </li>
+                                <li class="more-item">
+                                    <p class="more-item-title">云基础设施</p>
+                                </li>
+                                <li class="more-item">
+                                    <p class="more-item-title">大数据</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="more-li">
+                            <a href="" class="index">合作伙伴
+                                <div class="more-down"><span></span></div>
+                            </a>
+                        </li>
+                        <li class="more-li">
+                            <a href="" class="index">服务支持
+                                <div class="more-down"><span></span></div>
+                            </a>
+                        </li>
+                        <li class="more-li">
+                            <a href="" class="index">关于我们
+                                <div class="more-down"><span></span></div>
+                            </a>
+                        </li>
+                        <li class="more-li">
+                            <a href="" class="index">English
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
 </div>
 <!-- header end --> 

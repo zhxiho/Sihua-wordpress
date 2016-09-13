@@ -1,14 +1,23 @@
 $(document).ready(function(){
 
+	// $height = window.screen.availHeight;
+	// alert($height);
+	$('.nav-more').click(function(){
+		$('.more-menu').show("slow");
+	});
+	$('.index').click(function(){
+		$('#more-li').show("slow");
+	});
+
 	//banner 切换
 	$(".banner-roll .prev").click(function(){
 		clearInterval(timer);
 		$id = $(this).attr("dl");
 		if($id == '1'){
-			$(".banner-pic1").css("margin-left","0");
+			$("#banner1").css("margin-left","0");
 			$("#li1").addClass("line1").siblings().removeClass("line1");
 		}else if($id == '2'){
-			$(".banner-pic1").css("margin-left","-25%");
+			$("#banner1").css("margin-left","-50%");
 			$("#li2").addClass("line1").siblings().removeClass("line1");
 		}
 	}).mouseup(function(){
@@ -24,9 +33,9 @@ $(document).ready(function(){
 			if(index < $n){
 				$(".banner-btn .banner-btn-line").eq(index).addClass("line1").siblings().removeClass("line1");
 				if(index+1 == '1'){
-					$(".banner-pic1").css("margin-left","0");
+					$("#banner1").css("margin-left","0");
 				}else if(index+1 == '2'){
-					$(".banner-pic1").css("margin-left","-25%");
+					$("#banner1").css("margin-left","-50%");
 				}
 			}else{
 				index=-1;

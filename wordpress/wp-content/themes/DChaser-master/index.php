@@ -4,12 +4,16 @@ get_header();
 ?>
 <!-- content start -->
 	<!-- banner start -->
-	<div class="wrapper content-height">
+	<div class="banner-height">
 	    <div class="banner-list">
-	        <div id="banner1" class="banner-pic1" style="background-image:url(<?php bloginfo('template_url'); ?>/static/img/img/banner1.png);">
-	        </div>
-	        <div id="banner2" class="banner-pic2" style="background-image:url(<?php bloginfo('template_url'); ?>/static/img/img/banner2.png);"/>
-	        </div>
+		    <section class="banner-bg">
+				<section class="banner-ok">
+			        <div id="banner1" class="banner-pic" style="background-image:url(<?php bloginfo('template_url');?>/static/img/img/banner1.png);">
+			        </div>
+				    <div id="banner2" class="banner-pic" style="background-image:url(<?php bloginfo('template_url');?>/static/img/img/banner2.png);">
+			        </div>
+			    </section>
+			</section>
 	    </div>
 	    <div class="banner-prev-next">
 	    	<div class="banner-roll">
