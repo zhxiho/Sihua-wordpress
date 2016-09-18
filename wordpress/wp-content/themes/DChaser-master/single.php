@@ -3,7 +3,7 @@
  get_header(); 
  ?>
  <div class="heading-top">
-当前位置：<a href="<?php bloginfo('siteurl'); ?>/" title="返回首页">首页</a> > <?php $categories = get_the_category(); echo(get_category_parents($categories[0]->term_id, TRUE, ' > '));  ?>正文
+当前位置vzfdsvdsbsdr：<a href="<?php bloginfo('siteurl'); ?>/" title="返回首页">首页</a> > <?php $categories = get_the_category(); echo(get_category_parents($categories[0]->term_id, TRUE, ' > '));  ?>正文
 </div>
 <!-- Main Container -->
 <div id="body-wrapper">

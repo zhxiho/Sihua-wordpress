@@ -3,7 +3,7 @@
  get_header(); 
  ?>
 <div class="heading-top">
-当前位置：<a href="<?php bloginfo('siteurl'); ?>/" title="返回首页">首页</a> > <?php the_title(); ?>
+当前位置dcadvaerbwrhbtw：<a href="<?php bloginfo('siteurl'); ?>/" title="返回首页">首页</a> > <?php the_title(); ?>
 </div>
 <!-- Main Container -->
 <div id="body-wrapper">
