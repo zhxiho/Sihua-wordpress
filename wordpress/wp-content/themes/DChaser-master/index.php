@@ -53,7 +53,7 @@ get_header();
 	            <p>产品中心</p>
 	        </div>
 	        <div class="product-list">
-	        	<div id="first" class="product pro">
+	        	<div id="first" class="product">
 	                <img src="<?php bloginfo('template_url'); ?>/static/img/img/media.png" alt="" class="product-pic" />
 	                <p class="product-name">互动媒体</p>
 	                <p class="product-info">完整的端到端互动媒体专家，完整的端到端互动媒体专家</p>
@@ -84,10 +84,10 @@ get_header();
 	            <p>行业解决方案</p>
 	        </div>
 	        <div class="project-list">
-	            <!-- 获取新闻动态文章 -->
+	            <!-- 获取行业解决方案文章 -->
 	            <?php
-	                global $query_string;
-	                query_posts($query_string.'&showposts=8&caller_get_posts=6');
+	                //global $query_string;
+	                query_posts('showposts=6&cat=2');
 	                $i = 0;
 	                $index = 0;
 	                if (have_posts()){
@@ -138,9 +138,42 @@ get_header();
 	                    </p>
 	                </div>
 	                <div class="news-first">
-	                    <?=simple_get_most_viewed(); ?>
+	                	<!-- 获取新闻动态文章 -->
+	                	<?php
+	                	if(have_posts()):
+							query_posts('cat=1'.$mcatID.'&showposts=1');
+							while(have_posts()):the_post();
+						?>
+					     	<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" target="_blank">
+					     		<p class="news-first-title">
+					     			<?php echo wp_trim_words(get_the_title(),22,"...");  ?>
+            					</p>
+            					<p class="news-first-abstract">
+            						<?php echo wp_trim_words(get_the_content(),80,"..."); ?>
+            					</p>
+            				</a>
+						<?php
+							endwhile;
+							endif; wp_reset_query();
+						?>
 	                </div>
-	                    <?=simple_get_most_viewed1(); ?>
+	                <?php
+                	if(have_posts()):
+						query_posts('cat=1'.$mcatID.'&showposts=2&offset=1');
+						while(have_posts()):the_post();
+					?>
+				     	<div class='news-lists'>
+				     		<p class='news-title'>
+				     			<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" target="_blank">
+				     				<?php echo wp_trim_words(get_the_title(),22,"...");  ?>
+				     			</a>
+				     			<span><?php the_time('Y-m-d H:m:s'); ?></span>
+				     		</p>
+				     	</div>
+					<?php
+						endwhile;
+						endif; wp_reset_query();
+					?>
 	            </div>
 	            <div id="news2" class="news news02">
 	                <div class="news-left">
@@ -150,9 +183,42 @@ get_header();
 	                    </p>
 	                </div>
 	                <div class="news-first">
-	                    <?=simple_get_most_viewed(); ?>
+		                <!-- 获取媒体报导文章 -->
+	                	<?php
+	                	if(have_posts()):
+							query_posts('cat=3'.$mcatID.'&showposts=1');
+							while(have_posts()):the_post();
+						?>
+					     	<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" target="_blank">
+					     		<p class="news-first-title">
+					     			<?php echo wp_trim_words(get_the_title(),24,"...");  ?>
+            					</p>
+            					<p class="news-first-abstract">
+            						<?php echo wp_trim_words(get_the_content(),80,"..."); ?>
+            					</p>
+            				</a>
+						<?php
+							endwhile;
+							endif; wp_reset_query();
+						?>
 	                </div>
-	                    <?=simple_get_most_viewed1(); ?>
+	                <?php
+                	if(have_posts()):
+						query_posts('cat=3'.$mcatID.'&showposts=2&offset=1');
+						while(have_posts()):the_post();
+					?>
+				     	<div class='news-lists'>
+				     		<p class='news-title'>
+				     			<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" target="_blank">
+				     				<?php echo wp_trim_words(get_the_title(),24,"...");  ?>
+				     			</a>
+				     			<span><?php the_time('Y-m-d H:m:s'); ?></span>
+				     		</p>
+				     	</div>
+					<?php
+						endwhile;
+						endif; wp_reset_query();
+					?>
 	            </div>
 	        </div>
 	    </div>

@@ -446,43 +446,54 @@ function Get_Random_Post($limit=5,$cut_length=44){
 	}//遍历数组输出结果
 }
 
-// 获得热评文章
-function simple_get_most_viewed($posts_num=1){
-    global $wpdb;
-    $sql = "SELECT ID,post_title,post_date,comment_count,post_content
-            FROM $wpdb->posts
-           WHERE post_type = 'post'
-		   AND ($wpdb->posts.`post_status` = 'publish' OR $wpdb->posts.`post_status` = 'inherit')
-           ORDER BY comment_count DESC LIMIT 0 , $posts_num ";
-    $str = "";
-    $posts = $wpdb->get_results($sql);
-    if(is_array($posts)){
-        foreach($posts as $post){
-            $str .="<a href='".get_permalink($post->ID)."'><p class='news-first-title'>".mb_strimwidth($post->post_title,0,38).
-                "</p><p class='news-first-abstract'>".strip_tags(mb_strimwidth($post->post_content,0,200,'......'))."</p></a>";
-        }
-    }
-    echo $str;
-}
+/* 获得指定分类ID文章
+if(have_posts()):
+    query_posts('cat=1'.$mcatID.'&showposts=1');
+    while(have_posts()):the_post();
+     <li>
+         <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" target="_blank">
+         <?php the_title();</a>
+    </li>
+    endwhile;
+    endif; wp_reset_query();
+*/
+
+// function get_news_posts_first($posts_num){
+//     global $wpdb;
+//     $sql = "SELECT ID,post_title,post_date,comment_count,post_content
+//             FROM $wpdb->posts
+//            WHERE post_type = 'post'
+// 		   AND ($wpdb->posts.`post_status` = 'publish' OR $wpdb->posts.`post_status` = 'inherit')
+//            ORDER BY post_date DESC LIMIT 0 , $posts_num ";
+//     $str = "";
+//     $posts = $wpdb->get_results($sql);
+//     if(is_array($posts)){
+//         foreach($posts as $post){
+//             $str .="<a href='".get_permalink($post->ID)."'><p class='news-first-title'>".mb_strimwidth($post->post_title,0,38).
+//                 "</p><p class='news-first-abstract'>".strip_tags(mb_strimwidth($post->post_content,0,200,'......'))."</p></a>";
+//         }
+//     }
+//     echo $str;
+// }
 
 // 获得热评文章
-function simple_get_most_viewed1($posts_num=2){
-    global $wpdb;
-    $sql = "SELECT ID,post_title,post_date,comment_count,post_content
-            FROM $wpdb->posts
-           WHERE post_type = 'post'
-           AND ($wpdb->posts.`post_status` = 'publish' OR $wpdb->posts.`post_status` = 'inherit')
-           ORDER BY comment_count DESC LIMIT 0 , $posts_num ";
-    $str = "";
-    $posts = $wpdb->get_results($sql);
-    if(is_array($posts)){
-        foreach($posts as $post){
-            $str .="<div class='news-lists'><p class='news-title'><a href='".get_permalink($post->ID)."'>".mb_strimwidth($post->post_title,0,38).
-                "</a><span>".$post->post_date."</span></p></div>";
-        }
-    }
-    echo $str;
-}
+// function simple_get_most_viewed1($posts_num=2){
+//     global $wpdb;
+//     $sql = "SELECT ID,post_title,post_date,comment_count,post_content
+//             FROM $wpdb->posts
+//            WHERE post_type = 'post'
+//            AND ($wpdb->posts.`post_status` = 'publish' OR $wpdb->posts.`post_status` = 'inherit')
+//            ORDER BY comment_count DESC LIMIT 0 , $posts_num ";
+//     $str = "";
+//     $posts = $wpdb->get_results($sql);
+//     if(is_array($posts)){
+//         foreach($posts as $post){
+//             $str .="<div class='news-lists'><p class='news-title'><a href='".get_permalink($post->ID)."'>".mb_strimwidth($post->post_title,0,38).
+//                 "</a><span>".$post->post_date."</span></p></div>";
+//         }
+//     }
+//     echo $str;
+// }
 
 // 获得热评文章
 // function simple_get_most_viewed($posts_num=3){

@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 	// $height = document.body.clientWidth;
 	// alert($height);
+	$("#myCarousel").carousel('cycle');
 	$('.more-pic').click(function(){
 		$('.more-menu').fadeToggle("fast");
 	});

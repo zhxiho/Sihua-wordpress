@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
     <?php include('lib/seo.php'); ?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <!-- <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/static/css/bootstrap.css" /> -->
-    <!-- <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/static/css/bootstrap.min.css" /> -->
-    <!-- <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/static/css/bootstrap-theme.css" /> -->
-    <!-- <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/static/css/bootstrap-theme.min.css" /> -->
+    <!-- <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/bootstrap.css" /> -->
+    <!-- <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/bootstrap.min.css" /> -->
+    <!-- <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/bootstrap-theme.css" /> -->
+    <!-- <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/bootstrap-theme.min.css" /> -->
     <?php
     //加载css
     gk_load_css();
@@ -31,12 +31,6 @@
     <!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/static/js/bootstrap.js"></script>
-    <script>
-    $(function(){
-        // 初始化轮播,从左到右循环轮播项目
-        $("#myCarousel").carousel('cycle');
-    });
-</script>
     
 </head>
 <body >
