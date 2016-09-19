@@ -56,7 +56,7 @@
                     </a>
                 </li>
                 <li class="nav-ul-li">
-                    <a href="http://localhost/wordpress/wordpress/aboutus/" class="index">关于我们
+                    <a href="http://localhost/wordpress/wordpress/about/" class="index">关于我们
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>
