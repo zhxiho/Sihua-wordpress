@@ -10,7 +10,7 @@
         <div class="nav">
             <ul class="nav-ul">
                 <li class="nav-ul-li shouye">
-                    <a href="" class="index">首页</a>
+                    <a href="http://localhost/wordpress/wordpress/" class="index">首页</a>
                 </li>
                 <li class="nav-ul-li">
                     <a href="" class="index">
@@ -46,17 +46,17 @@
                     </div>
                 </li>
                 <li class="nav-ul-li">
-                    <a href="" class="index">合作伙伴
+                    <a href="http://localhost/wordpress/wordpress/partner/" class="index">合作伙伴
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>
                 <li class="nav-ul-li">
-                    <a href="" class="index">服务支持
+                    <a href="http://localhost/wordpress/wordpress/servicesupport/" class="index">服务支持
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>
                 <li class="nav-ul-li">
-                    <a href="" class="index">关于我们
+                    <a href="http://localhost/wordpress/wordpress/aboutus/" class="index">关于我们
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>

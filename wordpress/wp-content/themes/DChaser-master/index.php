@@ -53,6 +53,7 @@ get_header();
 	            <p>产品中心</p>
 	        </div>
 	        <div class="product-list">
+	        	<!-- 获取产品中心文章 -->
 	        	<div id="first" class="product">
 	                <img src="<?php bloginfo('template_url'); ?>/static/img/img/media.png" alt="" class="product-pic" />
 	                <p class="product-name">互动媒体</p>

@@ -1,15 +1,26 @@
 @CHARSET "UTF-8";
-a,abbr,address,applet,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,input,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,select,small,span,strike,strong,sub,summary,sup,table,tbody,td,textarea,tfoot,th,thead,time,tr,tt,u,ul,var,video{background:0 0;border:0;font-size:100%;margin:0;outline:0;padding:0;vertical-align:baseline;text-decoration:none;}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+a,abbr,address,applet,article,aside,audio,b,blockquote,body,
+canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,
+fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,
+hgroup,html,i,iframe,img,input,ins,kbd,label,legend,li,mark,menu,
+nav,object,ol,output,p,pre,q,s,samp,section,select,small,span,
+strike,strong,sub,summary,sup,table,tbody,td,textarea,tfoot,th,thead,
+time,tr,tt,u,ul,var,video{
+  background:0 0;border:0;font-size:100%;margin:0;outline:0;padding:0;
+  vertical-align:baseline;text-decoration:none;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,
+section {display:block}
 ul {list-style:none;display:block;}
 ul li {float:left;display:block;}
 body {width:100%;height:100%;}
-.Title p {text-align:center;font-size:18px;font-family:"微软雅黑";}
 .wrapper {width:100%;height:100%;position:relative;}
 .mid-wrapper {margin-left:15%;margin-right:15%;width:70%;}
-.header-b {height:60px;position:fixed;z-index:999;}
+/* 以下为 index.php css 样式 */
+.Title p {text-align:center;font-size:18px;font-family:"微软雅黑";}
 /* header start */
 /* header logo */
+.header-b {height:60px;position:fixed;z-index:999;}
 .header-logo {float:left;padding-top:10px;padding-bottom:10px;display:block;
 	width:122px;height:100%;}
 .logo {margin:auto;display:block;width:100%;height:100%;}
@@ -36,8 +47,8 @@ body {width:100%;height:100%;}
 }
 .nav-ul:first-child .shouye a {opacity:1;}
 .nav-ul .nav-ul-li:hover .index ,
-.item .item-title:hover ,
-.item .item-info:hover , 
+.items .item-title:hover ,
+.items .item-info:hover , 
 .language a:hover {
 	color:#fff;opacity:1;text-decoration:none;filter: alpha(opacity=100);
 }
@@ -59,14 +70,14 @@ body {width:100%;height:100%;}
 	float:left;margin-left:1%;padding:0 1%;width:22%;
 	height:auto;font-family:"微软雅黑";
 }
-.menu-list:after , .item:after {
+.menu-list:after , .items:after {
 	clear:both;content:'';display:block;visibility:none;height:1%;
 }
-.item .item-title {
+.items .item-title {
 	margin-bottom:10px;padding-bottom:20px;font-size:18px;color:#fff;
 	border-bottom:1px dashed #3c3c3c;text-align:center;
 }
-.item .item-info {
+.items .item-info {
 	padding:0;margin:0;font-size:16px;color:#fff;
 	text-align:center;line-height:36px;
 }
@@ -571,3 +582,4 @@ body {width:100%;height:100%;}
    max-zoom: 0.5; 
    min-zoom: 0.5;   
 }
+

@@ -904,4 +904,27 @@ function __popular_posts($no_posts=6, $before="<li>", $after="</li>", $show_pass
 	}
 	return  $output;
 }
+
+/**
+* 不同分类使用不同的文章模板
+* From https://www.wpdaxue.com/custom-single-post-template.html
+*/
+//定义模板文件所在目录为 single 文件夹
+define(SINGLE_PATH, TEMPLATEPATH . '/');
+//自动选择模板的函数
+function wpdaxue_single_template($single) {
+    global $wp_query, $post;
+    //通过分类别名或ID选择模板文件
+    foreach((array)get_the_category() as $cat) :
+        if(file_exists(SINGLE_PATH . '/single-' . $cat->slug . '.php'))
+            return SINGLE_PATH . '/single-' . $cat->slug . '.php';
+        // elseif(file_exists(SINGLE_PATH . '/single-' . $cat->term_id . '.php'))
+        //     return SINGLE_PATH . '/single-' . $cat->term_id . '.php';
+    endforeach;
+}
+//通过 single_template 钩子挂载函数
+add_filter('single_template', 'wpdaxue_single_template');
+
+
+
 ?>

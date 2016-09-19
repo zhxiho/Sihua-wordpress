@@ -9,6 +9,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
     <?php include('lib/seo.php'); ?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+    <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/about.css" />
+    <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/partner.css" />
+    <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/product.css" />
+    <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/project.css" />
+    <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/serviceSupport.css" />
     <!-- <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/bootstrap.css" /> -->
     <!-- <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/bootstrap.min.css" /> -->
     <!-- <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/static/css/bootstrap-theme.css" /> -->
@@ -26,10 +31,10 @@
 		$('.flexslider').flexslider();
 	});
     </script>
-    <script src="<?php bloginfo('template_url'); ?>/static/js/js.js" type="text/javascript"></script>
-    <script src="<?php bloginfo('template_url'); ?>/static/js/jsjs.js" type="text/javascript"></script>
+    <script src="<?php bloginfo('template_url'); ?>/static/js/shouyejs.js" type="text/javascript"></script>
+    <script src="<?php bloginfo('template_url'); ?>/static/js/headernavjs.js" type="text/javascript"></script>
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/static/js/bootstrap.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/static/js/bootstrap.min.js"></script>
     
 </head>
 <body >
