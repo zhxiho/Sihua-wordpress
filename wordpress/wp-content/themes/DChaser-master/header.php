@@ -9,10 +9,16 @@
         </div>
         <div class="nav">
             <ul class="nav-ul">
-                <li class="nav-ul-li shouye">
-                    <a href="http://localhost/wordpress/wordpress/" class="index">首页</a>
+                <?php 
+                    echo " <li dl='1' class='nav-ul-li ";
+                    if(is_home()){echo " shouye'>";}else{echo " '> ";} 
+                ?>
+                    <a href="http://localhost/wordpress/wordpress/" class="index" style="text-align:center;">首页</a>
                 </li>
-                <li class="nav-ul-li">
+                <?php 
+                    echo " <li dl='2' class='nav-ul-li ";
+                    if(is_single()){echo " shouye'>";}else{echo " '> ";} 
+                ?>
                     <a href="" class="index">
                         产品中心
                         <div class="down-list"><span></span></div>
@@ -45,17 +51,26 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-ul-li">
+                <?php 
+                    echo " <li dl='3' class='nav-ul-li ";
+                    if(is_page("partner")){echo " shouye'>";}else{echo " '> ";} 
+                ?>
                     <a href="http://localhost/wordpress/wordpress/partner/" class="index">合作伙伴
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>
-                <li class="nav-ul-li">
+                <?php 
+                    echo " <li dl='4' class='nav-ul-li ";
+                    if(is_page("servicesupport")){echo " shouye'>";}else{echo " '> ";} 
+                ?>
                     <a href="http://localhost/wordpress/wordpress/servicesupport/" class="index">服务支持
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>
-                <li class="nav-ul-li">
+                <?php 
+                    echo " <li dl='5' class='nav-ul-li ";
+                    if(is_page("about")){echo " shouye'>";}else{echo " '> ";} 
+                ?>
                     <a href="http://localhost/wordpress/wordpress/about/" class="index">关于我们
                         <div class="down-list"><span></span></div>
                     </a>
