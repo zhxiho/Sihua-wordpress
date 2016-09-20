@@ -54,26 +54,43 @@ get_header();
 	        </div>
 	        <div class="product-list">
 	        	<!-- 获取产品中心文章 -->
-	        	<div id="first" class="product">
-	                <img src="<?php bloginfo('template_url'); ?>/static/img/img/media.png" alt="" class="product-pic" />
-	                <p class="product-name">互动媒体</p>
-	                <p class="product-info">完整的端到端互动媒体专家，完整的端到端互动媒体专家</p>
-	            </div>
-	            <div id="second" class="product">
-	                <img src="<?php bloginfo('template_url'); ?>/static/img/img/invented.png"  alt=""  class="product-pic" />
-	                <p class="product-name">虚拟化</p>
-	                <p class="product-info">完整的端到端互动媒体专家，完整的端到端互动媒体专家</p>
-	            </div>
-	            <div id="third" class="product">
-	                <img src="<?php bloginfo('template_url'); ?>/static/img/img/cloudbase.png"  alt=""  class="product-pic" />
-	                <p class="product-name">云基础设施</p>
-	                <p class="product-info">完整的端到端互动媒体专家，完整的端到端互动媒体专家</p>
-	            </div>
-	            <div id="last" class="product">
-	                <img src="<?php bloginfo('template_url'); ?>/static/img/img/bigdata.png"  alt=""  class="product-pic" />
-	                <p class="product-name">大数据</p>
-	                <p class="product-info">完整的端到端互动媒体专家，完整的端到端互动媒体专家</p>
-	            </div>
+	        	<?php
+	        		$productCount = get_category(9)->count;
+	                query_posts('cat=9');
+	                $i = 0;
+	                $index = 0;
+	                if (have_posts()){
+	                    while (have_posts()){
+	                        the_post();
+	                        $content = $post->post_content;
+	                        $searchimages = '~<img [^>]* />~';
+	                        preg_match_all( $searchimages, $content, $pics );
+	                        $iNumberOfPics = count($pics[0]);
+	                        if ( $iNumberOfPics > 0 ) {
+	                          echo "<div class='product";
+	                          if( $productCount%3 == 0 || $productCount == 5 ){
+	                        	echo "3";
+	                          }else if( $productCount == 4 ){
+	                        	echo "4";
+	                          }
+	                          echo "' id='product";
+	                          echo $index++;
+	                          echo "'><img src=' ";
+	                          echo catch_that_image();
+	                          echo "' alt=' ";
+	                          echo the_title();
+	                          echo "' class='product-pic' /><a class='product-name' href='";
+	                		  echo the_permalink();
+	                		  echo "'>";
+	                		  echo the_title();
+	                		  echo "</a><p class='product-info'>";
+	                		  echo get_the_excerpt();
+	                		  echo "</p></div>";
+	                          $i ++;
+	                        }
+	                    }
+	                }
+	            ?>
 	        </div>
 	    </div>
 	</div>
@@ -87,8 +104,7 @@ get_header();
 	        <div class="project-list">
 	            <!-- 获取行业解决方案文章 -->
 	            <?php
-	                //global $query_string;
-	                query_posts('showposts=6&cat=2');
+	                query_posts('cat=2');
 	                $i = 0;
 	                $index = 0;
 	                if (have_posts()){
@@ -98,7 +114,7 @@ get_header();
 	                        $searchimages = '~<img [^>]* />~';
 	                        preg_match_all( $searchimages, $content, $pics );
 	                        $iNumberOfPics = count($pics[0]);
-	                        if ( $iNumberOfPics > 0 &&$i <6) {
+	                        if ( $iNumberOfPics > 0 ) {
 	                          echo "<a id='project";
 	                          echo $index++;
 	                          echo "' href=' ";
@@ -107,14 +123,12 @@ get_header();
 	                          echo catch_that_image();
 	                          echo "' alt='";
 	                          echo the_title();
-	                          echo "' class='project-pic' /><div class='project-info'>";
-	                          echo "<p>";
+	                          echo "' class='project-pic' /><div class='project-info'><p>";
 	                          echo the_title();
-	                          echo "</p><div class='project-icon' ";
-	                          echo " ><div class='icon'></div>
-	                          <div class='icon'></div>
-	                          <div class='icon'></div>
-	                          </div></div></a>";
+	                          echo "</p><div class='project-icon'><div class='icon'></div>
+	                          	  <div class='icon'></div>
+	                              <div class='icon'></div>
+	                              </div></div></a>";
 	                          $i ++;
 	                        }
 	                    }
@@ -232,54 +246,36 @@ get_header();
 	            <p>合作伙伴</p>
 	        </div>
 	        <div class="partner-list">
-	        	<div class="partner-page01">
-	                <div class="partner-top">
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/1.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/2.png" alt="" />  
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/3.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/4.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/1.png" alt="" />
-	                </div>
-	                <div class="partner-bottom">
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/5.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/6.png" alt="" />  
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/7.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/8.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/4.png" alt="" />
-	                </div>
-	            </div>
-	            <div class="partner-page02">
-	                <div class="partner-top">
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/4.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/8.png" alt="" />  
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/7.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/6.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/5.png" alt="" />
-	                </div>
-	                <div class="partner-bottom">
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/1.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/4.png" alt="" />  
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/3.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/2.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/1.png" alt="" />
-	                </div>
-	            </div>
-	            <div class="partner-page03">
-	                <div class="partner-top">
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/1.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/2.png" alt="" />  
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/3.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/4.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/1.png" alt="" />
-	                </div>
-	                <div class="partner-bottom">
-	                	<img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/5.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/6.png" alt="" />  
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/7.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/8.png" alt="" />
-	                    <img class="partner" src="<?php bloginfo('template_url'); ?>/static/img/img/1.png" alt="" />
-	                </div>
-	            </div>
+        	<?php
+                query_posts('cat=23');
+                //$i = 0;
+                //$index = 0;
+                if (have_posts()){
+                    while (have_posts()){
+                        the_post();
+                        $content = $post->post_content;
+                        $searchimages = '~<a href=\"(.*?)\".*?>(.*?)<img [^>]* /><\/a>~';
+                        preg_match_all( $searchimages, $content, $pics );
+                        //var_dump($pics);
+                        $count = count($pics[0]);
+                        for ($i = 0 ; $i < $count ; $i++){
+                        	if ( $i < 10 ) {
+                        		echo "<div class='partner-page01'><div class='partner-top'>";
+	                        	echo $pics[0][$i];
+	                        	echo "</div></div>";
+	                        }else if( $i < 20 ){
+                        		echo "<div class='partner-page02'><div class='partner-top'>";
+	                        	echo $pics[0][$i];
+	                        	echo "</div></div>";
+                        	}else if( $i < 30 ){
+                        		echo "<div class='partner-page03'><div class='partner-top'>";
+	                        	echo $pics[0][$i];
+	                        	echo "</div></div>";
+	                        }
+                        }
+                    }
+                }
+	        ?>
 	        </div>
 	        <div class="partner-next-button">
 	            <a dl="1" href="javascript:void(0);" class="partner-point point"></a>
@@ -290,11 +286,6 @@ get_header();
 	</div>
 	<!-- pantner end -->
 <!-- content end --> 
-
 <?php
 get_footer();
 ?>
-
-
-
-        

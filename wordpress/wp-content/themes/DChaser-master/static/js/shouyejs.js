@@ -50,9 +50,4 @@ $(document).ready(function(){
 			$(".partner-page03").css("display","block");
 		}
 	});
-
-	//导航栏颜色切换
-	$('.nav-ul .nav-ul-li').click(function(){
-		$(this).addClass("shouye").siblings().removeClass("shouye");
-	});
 });

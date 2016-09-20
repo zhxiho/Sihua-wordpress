@@ -30,7 +30,7 @@ body {width:100%;height:100%;}
 	text-decoration:none;line-height:60px;font-size:16px;color:#fff;
 	font-family:"微软雅黑";filter: alpha(opacity=40);}
 /* header nav */
-.nav {float:right;display:block;width:70%;height:100%;}
+.nav {float:right;color:red;display:block;width:70%;height:100%;}
 .nav-ul {width:100%;height:100%;}
 .nav-ul-li {width:20%;height:100%;text-align:right;}
 .nav-ul-li a {display:block;width:100%;height:100%;line-height:60px;
@@ -167,27 +167,29 @@ body {width:100%;height:100%;}
 /* 2行2列 */
 @media screen and (min-width:720px) and (max-width:960px) {
 	.content-mid-wrapper {margin-left:0;margin-right:0;width:100%;}
-	#first , #third {margin-left:10%;width:34%;}
-	#second , #last {margin-left:7%;width:34%;}
-	#third , #last {margin-top:10px;}
+	#product0 , #product2 , #product4 {margin-left:10%;width:34%;}
+	#product1, #product3 , #product5 {margin-left:7%;width:34%;}
+	#product2 , #product3 , #product4 , #product5 {margin-top:10px;}
 }
 @media screen and (min-width:660px) and (max-width:720px) {
 	.content-mid-wrapper {margin-left:0;margin-right:0;width:100%;}
-	#first , #third {margin-left:8%;width:38%;}
-	#second , #last {margin-left:4%;width:38%;}
-	#third , #last {margin-top:10px;}
+	#product0 , #product2 , #product4 {margin-left:8%;width:38%;}
+	#product1, #product3 , #product5 {margin-left:4%;width:38%;}
+	#product2 , #product3 , #product4 , #product5 {margin-top:10px;}
 	
 }
 @media screen and (min-width:480px) and (max-width:660px) {
 	.content-mid-wrapper {margin-left:0;margin-right:0;width:100%;}
-	#first , #third {margin-left:3%;width:43%;}
-	#second , #last {margin-left:1%;width:43%;}
-	#third , #last {margin-top:10px;}
+	#product0 , #product2 , #product4 {margin-left:3%;width:43%;}
+	#product1, #product3 , #product5 {margin-left:1%;width:43%;}
+	#product2 , #product3 , #product4 , #product5 {margin-top:10px;}
 }
 /* 4行1列 */
 @media screen and (max-width:480px) {
 	.content-mid-wrapper {margin-left:0;margin-right:0;width:100%;}
-	#first , #third , #second , #last {margin-left:13%;margin-top:10px;width:70%;}
+  #product0 , #product1 , #product2 ,
+  #product3 , #product4 , #product5 {
+    margin-left:13%;margin-top:10px;width:70%;}
 }
 /*****************************   project  *********************************/
 /* 3行2列 */
@@ -476,18 +478,26 @@ body {width:100%;height:100%;}
 .Title p {text-align:center;font-size:32px;color:#333;font-family:"微软雅黑";}
 .product-list , .project-list , .news-list , .partner-list {
 	overflow:hidden;zoom:1;padding-top:100px;width:;height:auto;}
-.product {float:left;display:block;margin-right:1%;padding:1%;
-	width:21%;min-width:200px;height:auto;text-align:center;}
+.product3 {float:left;display:block;margin-left:5%;padding:1%;
+  width:25%;min-width:200px;height:auto;text-align:center;
+}
+.product4 {float:left;display:block;margin-left:1.4%;padding:1%;
+  width:21%;min-width:200px;height:auto;text-align:center;
+}
 .pro {margin-left:2.5%;}
 .product:after {clear:both;content:' ';display:block;visibility:none;height:1%}
-.product-pic {width:100px;height:100px;}
-.product-name {margin:30px auto 20px;font-size:24px;color:#333;
+.product-pic {width:100px;height:100px;border-radius:50%;}
+.product-name {display:block;margin:30px auto 20px;font-size:24px;color:#333;
 	font-family:"微软雅黑";}
 .product-info {text-align:justify;line-height:24px;letter-spacing:-1px;
 	font-size:14px;font-family:"微软雅黑";color:#666;}
 /* content project */
 .project {float:left;display:block;margin:0px 1.5% 25px;
-	width:30%;min-width:290px;height:auto;}
+	width:30%;min-width:290px;height:auto;
+}
+.project {float:left;display:block;margin:0px 1.5% 25px;
+  width:30%;min-width:290px;height:auto;
+}
 .project:after {clear:both;content:'';display:block;visibility:none;height:1%;}
 .project:hover {margin-top:;background-color:;margin-top:;
 	box-shadow:0px 10px 22px 0px rgba(0, 0, 0, 0.2);}
@@ -523,13 +533,20 @@ body {width:100%;height:100%;}
 .news-lists span {float:right;color:#a0a0a0;font-size:12px;font-family:"微软雅黑";}
 .news-lists:hover .news-title a {color:#e60012;}
 /* content partner */
-.partner-page01 , .partner-page02 , .partner-page03 {
-	display:none;width:100%;height:auto;top:100px;left:0;}
-.partner-page01 {display:block;}
-.partner {padding:10px;width:161px;height:auto;}
-.partner-top , .partner-bottom {width:100%;height:auto;}
-.partner-top , .partner-bottom {margin-bottom:20px;}
-.partner-next-button {margin:0 auto;width:50px;height:15px;}
+.partner-page02 , .partner-page03 {
+	display:none;width:100%;height:auto;margin-top:-20px;left:0;
+}
+.partner-page01 {
+  display:block;width:100%;height:auto;margin-top:-20px;left:0;
+  
+}
+.partner-top {width:100%;height:auto;}
+.partner-top a {
+  float:left;margin-top:20px;margin-left:1%;width:19%;min-width:161px;height:50px;
+  text-align:center;
+}
+.partner {width:161px;height:auto;}
+.partner-next-button {margin:20px auto 0;width:50px;height:15px;}
 .partner-point {float:left;margin-left:6px;display:block;width:10px;
 	height:10px;border-radius:5px;background-color:red;opacity:0.3;
 	filter: alpha(opacity=30);

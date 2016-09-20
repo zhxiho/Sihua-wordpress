@@ -4,9 +4,7 @@
  ?>
 <div class="pj-wrapper" style="background-color:red;">
     <img src="<?php bloginfo('template_url');?>/static/img/img/banner1.png">
-    <div>
-
-    </div>
+    <h1>行业解决方案</h1>
 </div>
 
 

@@ -2,8 +2,9 @@
  get_header('meta');
  get_header(); 
  ?>
-<div class="heading-top">
-当前位置   合作伙伴页面
+<div class="pj-wrapper" style="background-color:red;">
+    <img src="<?php bloginfo('template_url');?>/static/img/img/banner1.png">
+    <h1>合作伙伴</h1>
 </div>
 
 <?php get_footer(); ?> 

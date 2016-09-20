@@ -343,7 +343,7 @@ if (!function_exists('gk_upload')) {
 //显示菜单函数
 if (!function_exists('gk_nav_menu')) {
     function gk_nav_menu($location) {
-        $menus = gk_config('nav');
+        $menus = gk_config('div');
         $args = $menus[$location];
         $args['theme_location'] = $location;
         wp_nav_menu($args);
