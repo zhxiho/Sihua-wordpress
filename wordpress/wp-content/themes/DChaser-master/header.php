@@ -24,31 +24,27 @@
                         <div class="down-list"><span></span></div>
                     </a>
                     <div class="menu-list">
-                        <div class="items">
-                            <p class="item-title">互动媒体</p>
-                            <a href="" class="item-info">互动媒体01</a>
-                            <a href="" class="item-info">互动媒体02</a>
-                            <a href="" class="item-info">互动媒体03</a>
-                        </div>
-                        <div class="items">
-                            <p class="item-title">虚拟化</p>
-                            <a href="" class="item-info">虚拟化01</a>
-                            <a href="" class="item-info">虚拟化02</a>
-                            <a href="" class="item-info">虚拟化03</a>
-                        </div>
-                        <div class="items">
-                            <p class="item-title">云基础设施</p>
-                            <a href="" class="item-info">云基础设施01</a>
-                            <a href="" class="item-info">云基础设施02</a>
-                            <a href="" class="item-info">云基础设施03</a>
-                            <a href="" class="item-info">云基础设施04</a>
-                        </div>
-                        <div class="items">
-                            <p class="item-title">大数据</p>
-                            <a href="" class="item-info">大数据01</a>
-                            <a href="" class="item-info">大数据02</a>
-                            <a href="" class="item-info">大数据03</a>
-                        </div>
+                        <?php
+                            $result = get_categories("child_of=9&depth=0&hide_empty=0");
+                            $productCount = count($result);
+                            $index = '';
+                            foreach( $result as $key => $category ){
+                              echo "<div class='items";
+                              // if( $productCount%3 == 0 || $productCount == 5 ){
+                              //   echo "3";
+                              // }else if( $productCount == 4 ){
+                              //   echo "4";
+                              // }
+                              echo "'><a class='item-title' href='";
+                              echo bloginfo('url');
+                              echo "/".$category->slug."'>".$category->name;
+                              echo "</a>";
+                              //echo "<a class='item-info' href='";
+                              //echo ;//产品链接
+                              //echo "'></a>";
+                              echo "</div>";
+                            }
+                        ?>
                     </div>
                 </li>
                 <?php 

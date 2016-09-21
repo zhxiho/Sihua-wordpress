@@ -53,7 +53,7 @@ get_header();
 	            <p>产品中心</p>
 	        </div>
 	        <div class="product-list">
-	        	<!-- 获取产品中心文章 -->
+	        	<!-- 获取产品中心分类 -->
 	        	<?php
 					$result = get_categories("child_of=9&depth=0&hide_empty=0");
 					$productCount = count($result);
