@@ -3,7 +3,7 @@ get_header('meta');
 get_header();
 ?>
 <div class="heading-top">
-    当前位置：<a href="<?php bloginfo('siteurl'); ?>/" title="返回首页">首页</a> > “<?php echo $s; ?>”的搜索结果
+    当前位置search：<a href="<?php bloginfo('siteurl'); ?>/" title="返回首页">首页</a> > “<?php echo $s; ?>”的搜索结果
 </div>
 <!-- Main Container -->
 <div id="body-wrapper">

@@ -55,41 +55,28 @@ get_header();
 	        <div class="product-list">
 	        	<!-- 获取产品中心文章 -->
 	        	<?php
-	        		$productCount = get_category(9)->count;
-	                query_posts('cat=9');
-	                $i = 0;
-	                $index = 0;
-	                if (have_posts()){
-	                    while (have_posts()){
-	                        the_post();
-	                        $content = $post->post_content;
-	                        $searchimages = '~<img [^>]* />~';
-	                        preg_match_all( $searchimages, $content, $pics );
-	                        $iNumberOfPics = count($pics[0]);
-	                        if ( $iNumberOfPics > 0 ) {
-	                          echo "<div class='product";
-	                          if( $productCount%3 == 0 || $productCount == 5 ){
-	                        	echo "3";
-	                          }else if( $productCount == 4 ){
-	                        	echo "4";
-	                          }
-	                          echo "' id='product";
-	                          echo $index++;
-	                          echo "'><img src=' ";
-	                          echo catch_that_image();
-	                          echo "' alt=' ";
-	                          echo the_title();
-	                          echo "' class='product-pic' /><a class='product-name' href='";
-	                		  echo the_permalink();
-	                		  echo "'>";
-	                		  echo the_title();
-	                		  echo "</a><p class='product-info'>";
-	                		  echo get_the_excerpt();
-	                		  echo "</p></div>";
-	                          $i ++;
-	                        }
-	                    }
-	                }
+					$result = get_categories("child_of=9&depth=0&hide_empty=0");
+					$productCount = count($result);
+					$index = '';
+					foreach( $result as $key => $category ){
+					  $description = $category->description;
+					  preg_match_all("/\/(.*?(?:)).*?.png/", $description, $result_pic);
+					  preg_match_all("/([\x{4e00}-\x{9fa5},])+/u", $description,$result_info);
+                      echo "<div class='product";
+                      if( $productCount%3 == 0 || $productCount == 5 ){
+                        echo "3";
+                      }else if( $productCount == 4 ){
+                        echo "4";
+                      }
+                      echo "' id='product".$index++;
+                      echo "'><img src=' ";
+                      echo bloginfo('url').$result_pic[0][0];
+                      echo "' class='product-pic' /><a class='product-name' href='";
+                      echo bloginfo('url');
+                      echo "/".$category->slug."'>".$category->name;
+                      echo "</a><p class='product-info'>";
+                      echo $result_info[0][0]."</p></div>";
+                    }
 	            ?>
 	        </div>
 	    </div>
@@ -248,15 +235,12 @@ get_header();
 	        <div class="partner-list">
         	<?php
                 query_posts('cat=23');
-                //$i = 0;
-                //$index = 0;
                 if (have_posts()){
                     while (have_posts()){
                         the_post();
                         $content = $post->post_content;
                         $searchimages = '~<a href=\"(.*?)\".*?>(.*?)<img [^>]* /><\/a>~';
                         preg_match_all( $searchimages, $content, $pics );
-                        //var_dump($pics);
                         $count = count($pics[0]);
                         for ($i = 0 ; $i < $count ; $i++){
                         	if ( $i < 10 ) {

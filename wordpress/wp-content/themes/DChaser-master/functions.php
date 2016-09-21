@@ -2,9 +2,24 @@
 
 require_once file_exists(get_stylesheet_directory() . '/lib/core.php') ? get_stylesheet_directory() . '/lib/core.php' : get_template_directory() . '/lib/core.php';
 //加载子主题的函数
+function get_category_root_id($cat){
+    $this_category = get_category($cat);   // 取得当前分类
+    while($this_category->category_parent) // 若当前分类有上级分类时,循环
+    {
+        $this_category = get_category($this_category->category_parent); //将当前分类设为上级分类(往上爬)
+    }
+    return $this_category->term_id; // 返回根分类的id号
+}
 
 if (!isset($content_width)) $content_width = gk_config('content_width');
 add_action('after_setup_theme', 'gk_setup');
+if(function_exists('register_nav_menus')){
+    register_nav_menus(
+        array(
+        'header-menu' => __( 'header-nav' )
+        )
+    );
+}
 if (!function_exists('gk_setup')) {
     function gk_setup() {
         //支持语言包
