@@ -19,7 +19,7 @@
                     echo " <li dl='2' class='nav-ul-li ";
                     if(is_single()){echo " shouye'>";}else{echo " '> ";} 
                 ?>
-                    <a class="index">
+                    <a href="<?php bloginfo('url'); ?>/product" class="index">
                         产品中心
                         <div class="down-list"><span></span></div>
                     </a>
@@ -37,7 +37,7 @@
                           // }
                           echo "'><a class='item-title' href='";
                           echo bloginfo('url');
-                          echo "/".$category->slug."'>".$category->name;
+                          echo "/product?catid=".$category->cat_ID."'>".$category->name;
                           echo "</a>";
                           query_posts('cat='.$category->term_id);
                           if (have_posts()){
