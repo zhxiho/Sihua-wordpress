@@ -9,54 +9,73 @@
         </div>
         <div class="nav">
             <ul class="nav-ul">
-                <li class="nav-ul-li shouye">
-                    <a href="" class="index">首页</a>
+                <?php 
+                    echo " <li dl='1' class='nav-ul-li ";
+                    if(is_home()){echo " shouye'>";}else{echo " '> ";} 
+                ?>
+                    <a href="<?php bloginfo('url'); ?>" class="index" style="text-align:center;">首页</a>
                 </li>
-                <li class="nav-ul-li">
-                    <a href="" class="index">
+                <?php 
+                    echo " <li dl='2' class='nav-ul-li ";
+                    if(is_single()){echo " shouye'>";}else{echo " '> ";} 
+                ?>
+                    <a href="<?php bloginfo('url'); ?>/product" class="index">
                         产品中心
                         <div class="down-list"><span></span></div>
                     </a>
                     <div class="menu-list">
-                        <div class="items">
-                            <p class="item-title">互动媒体</p>
-                            <a href="" class="item-info">互动媒体01</a>
-                            <a href="" class="item-info">互动媒体02</a>
-                            <a href="" class="item-info">互动媒体03</a>
-                        </div>
-                        <div class="items">
-                            <p class="item-title">虚拟化</p>
-                            <a href="" class="item-info">虚拟化01</a>
-                            <a href="" class="item-info">虚拟化02</a>
-                            <a href="" class="item-info">虚拟化03</a>
-                        </div>
-                        <div class="items">
-                            <p class="item-title">云基础设施</p>
-                            <a href="" class="item-info">云基础设施01</a>
-                            <a href="" class="item-info">云基础设施02</a>
-                            <a href="" class="item-info">云基础设施03</a>
-                            <a href="" class="item-info">云基础设施04</a>
-                        </div>
-                        <div class="items">
-                            <p class="item-title">大数据</p>
-                            <a href="" class="item-info">大数据01</a>
-                            <a href="" class="item-info">大数据02</a>
-                            <a href="" class="item-info">大数据03</a>
-                        </div>
+                    <?php
+                        $result = get_categories("child_of=9&depth=0&hide_empty=0");
+                        $productCount = count($result);
+                        $index = '';
+                        foreach( $result as $key => $category ){
+                          echo "<div class='items";
+                          // if( $productCount%3 == 0 || $productCount == 5 ){
+                          //   echo "3";
+                          // }else if( $productCount == 4 ){
+                          //   echo "4";
+                          // }
+                          echo "'><a class='item-title' href='";
+                          echo bloginfo('url');
+                          echo "/product?catid=".$category->cat_ID."'>".$category->name;
+                          echo "</a>";
+                          query_posts('cat='.$category->term_id);
+                          if (have_posts()){
+                            while (have_posts()){
+                                the_post();
+                                echo "<a class='item-info' href='";
+                                echo the_permalink();
+                                echo "'>";
+                                echo the_title();
+                                echo "</a>";
+                            }
+                          }
+                          echo "</div>";
+                        }
+                    ?>
                     </div>
                 </li>
-                <li class="nav-ul-li">
-                    <a href="" class="index">合作伙伴
+                <?php 
+                    echo " <li dl='3' class='nav-ul-li ";
+                    if(is_page("partner")){echo " shouye'>";}else{echo " '> ";} 
+                ?>
+                    <a href="<?php bloginfo('url'); ?>/partner/" class="index">合作伙伴
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>
-                <li class="nav-ul-li">
-                    <a href="" class="index">服务支持
+                <?php 
+                    echo " <li dl='4' class='nav-ul-li ";
+                    if(is_page("servicesupport")){echo " shouye'>";}else{echo " '> ";} 
+                ?>
+                    <a href="<?php bloginfo('url'); ?>/servicesupport/" class="index">服务支持
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>
-                <li class="nav-ul-li">
-                    <a href="" class="index">关于我们
+                <?php 
+                    echo " <li dl='5' class='nav-ul-li ";
+                    if(is_page("about")){echo " shouye'>";}else{echo " '> ";} 
+                ?>
+                    <a href="<?php bloginfo('url'); ?>/about/" class="index">关于我们
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>
