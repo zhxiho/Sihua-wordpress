@@ -13,45 +13,53 @@
                     echo " <li dl='1' class='nav-ul-li ";
                     if(is_home()){echo " shouye'>";}else{echo " '> ";} 
                 ?>
-                    <a href="http://localhost/wordpress/wordpress/" class="index" style="text-align:center;">首页</a>
+                    <a href="<?php bloginfo('url'); ?>" class="index" style="text-align:center;">首页</a>
                 </li>
                 <?php 
                     echo " <li dl='2' class='nav-ul-li ";
                     if(is_single()){echo " shouye'>";}else{echo " '> ";} 
                 ?>
-                    <a href="" class="index">
+                    <a class="index">
                         产品中心
                         <div class="down-list"><span></span></div>
                     </a>
                     <div class="menu-list">
-                        <?php
-                            $result = get_categories("child_of=9&depth=0&hide_empty=0");
-                            $productCount = count($result);
-                            $index = '';
-                            foreach( $result as $key => $category ){
-                              echo "<div class='items";
-                              // if( $productCount%3 == 0 || $productCount == 5 ){
-                              //   echo "3";
-                              // }else if( $productCount == 4 ){
-                              //   echo "4";
-                              // }
-                              echo "'><a class='item-title' href='";
-                              echo bloginfo('url');
-                              echo "/".$category->slug."'>".$category->name;
-                              echo "</a>";
-                              //echo "<a class='item-info' href='";
-                              //echo ;//产品链接
-                              //echo "'></a>";
-                              echo "</div>";
+                    <?php
+                        $result = get_categories("child_of=9&depth=0&hide_empty=0");
+                        $productCount = count($result);
+                        $index = '';
+                        foreach( $result as $key => $category ){
+                          echo "<div class='items";
+                          // if( $productCount%3 == 0 || $productCount == 5 ){
+                          //   echo "3";
+                          // }else if( $productCount == 4 ){
+                          //   echo "4";
+                          // }
+                          echo "'><a class='item-title' href='";
+                          echo bloginfo('url');
+                          echo "/".$category->slug."'>".$category->name;
+                          echo "</a>";
+                          query_posts('cat='.$category->term_id);
+                          if (have_posts()){
+                            while (have_posts()){
+                                the_post();
+                                echo "<a class='item-info' href='";
+                                echo the_permalink();
+                                echo "'>";
+                                echo the_title();
+                                echo "</a>";
                             }
-                        ?>
+                          }
+                          echo "</div>";
+                        }
+                    ?>
                     </div>
                 </li>
                 <?php 
                     echo " <li dl='3' class='nav-ul-li ";
                     if(is_page("partner")){echo " shouye'>";}else{echo " '> ";} 
                 ?>
-                    <a href="http://localhost/wordpress/wordpress/partner/" class="index">合作伙伴
+                    <a href="<?php bloginfo('url'); ?>/partner/" class="index">合作伙伴
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>
@@ -59,7 +67,7 @@
                     echo " <li dl='4' class='nav-ul-li ";
                     if(is_page("servicesupport")){echo " shouye'>";}else{echo " '> ";} 
                 ?>
-                    <a href="http://localhost/wordpress/wordpress/servicesupport/" class="index">服务支持
+                    <a href="<?php bloginfo('url'); ?>/servicesupport/" class="index">服务支持
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>
@@ -67,7 +75,7 @@
                     echo " <li dl='5' class='nav-ul-li ";
                     if(is_page("about")){echo " shouye'>";}else{echo " '> ";} 
                 ?>
-                    <a href="http://localhost/wordpress/wordpress/about/" class="index">关于我们
+                    <a href="<?php bloginfo('url'); ?>/about/" class="index">关于我们
                         <div class="down-list"><span></span></div>
                     </a>
                 </li>

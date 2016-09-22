@@ -7,43 +7,43 @@ get_header();
 	<!--  data-interval="interval" data-wrap="wrap" data-pause="pause" -->
 	<div id="myCarousel" class="wrapper carousel slide">
 	    <!-- 轮播（Carousel）指标 -->
-	    <ol class="carousel-indicators">
-	        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-	        <li data-target="#myCarousel" data-slide-to="1"></li>
-	        <li data-target="#myCarousel" data-slide-to="2"></li>
-	    </ol>   
-	    <!-- 轮播（Carousel）项目 -->
-	    <div class="carousel-inner">
-	        <div class="item active">
-	            <img src="<?php bloginfo('template_url');?>/static/img/img/banner1.png">
-	        </div>
-	        <div class="item">
-	            <img src="<?php bloginfo('template_url');?>/static/img/img/banner2.png">
-	        </div>
-	        <div class="item">
-	            <img src="<?php bloginfo('template_url');?>/static/img/img/banner1.png">
-	        </div>
-	    </div>
-	    <!-- 轮播（Carousel）导航 -->
-	    <a class="carousel-control left" href="#myCarousel" 
-	        data-slide="prev">
-	        <img class="banner-prev" src="<?php bloginfo('template_url'); ?>/static/img/icon/left.png" alt="上一张图片" />
-	    </a>
-	    <a class="carousel-control right" href="#myCarousel" 
-	        data-slide="next">
-	        <img class="banner-next" src="<?php bloginfo('template_url'); ?>/static/img/icon/right.png" alt="下一张图片" />
-	    </a>
-		<img class="carousel-control bottom" src="<?php bloginfo('template_url'); ?>/static/img/icon/down.png" alt="往下看" />
-	    <!-- 控制按钮 -->
-	    <div style="text-align:center;display:none;">
-	        <input type="button" class="btn start-slide" value="Start">
-	        <!-- <input type="button" class="btn pause-slide" value="Pause">
-	        <input type="button" class="btn prev-slide" value="Previous Slide">
-	        <input type="button" class="btn next-slide" value="Next Slide">
-	        <input type="button" class="btn slide-one" value="Slide 1">
-	        <input type="button" class="btn slide-two" value="Slide 2">            
-	        <input type="button" class="btn slide-three" value="Slide 3"> -->
-	    </div>
+		<ol class="carousel-indicators">
+          	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          	<li data-target="#myCarousel" data-slide-to="1"></li>
+          	<li data-target="#myCarousel" data-slide-to="2"></li>
+      	</ol>   
+      	<!-- 轮播（Carousel）项目 -->
+      	<div class="carousel-inner">
+          <div class="item active">
+              <img src="<?php bloginfo('template_url');?>/static/img/img/banner1.png">
+          </div>
+          <div class="item">
+              <img src="<?php bloginfo('template_url');?>/static/img/img/banner2.png">
+          </div>
+          <div class="item">
+              <img src="<?php bloginfo('template_url');?>/static/img/img/banner1.png">
+          </div>
+      	</div>
+      	<!-- 轮播（Carousel）导航 -->
+      	<a class="carousel-control left" href="#myCarousel" 
+          data-slide="prev">
+          <img class="banner-prev" src="<?php bloginfo('template_url'); ?>/static/img/icon/left.png" alt="上一张图片" />
+      	</a>
+      	<a class="carousel-control right" href="#myCarousel" 
+          data-slide="next">
+          <img class="banner-next" src="<?php bloginfo('template_url'); ?>/static/img/icon/right.png" alt="下一张图片" />
+      	</a>
+    	<img class="carousel-control bottom" src="<?php bloginfo('template_url'); ?>/static/img/icon/down.png" alt="往下看" />
+      	<!-- 控制按钮 -->
+      	<div style="text-align:center;display:none;">
+          <input type="button" class="btn start-slide" value="Start">
+          <!-- <input type="button" class="btn pause-slide" value="Pause">
+          <input type="button" class="btn prev-slide" value="Previous Slide">
+          <input type="button" class="btn next-slide" value="Next Slide">
+          <input type="button" class="btn slide-one" value="Slide 1">
+          <input type="button" class="btn slide-two" value="Slide 2">            
+          <input type="button" class="btn slide-three" value="Slide 3"> -->
+      	</div>
 	</div> 
 	<!-- banner end -->
 	<!-- product start -->
@@ -57,7 +57,7 @@ get_header();
 	        	<?php
 					$result = get_categories("child_of=9&depth=0&hide_empty=0");
 					$productCount = count($result);
-					$index = '';
+					$index = 0;
 					foreach( $result as $key => $category ){
 					  $description = $category->description;
 					  preg_match_all("/\/(.*?(?:)).*?.png/", $description, $result_pic);
@@ -83,7 +83,7 @@ get_header();
 	</div>
 	<!-- product end -->
 	<!-- project start -->
-	<div class="content-wrapper" style="background-color:#f6f6f6;">
+	<div class="content-wrapper" style="display:;background-color:#f6f6f6;">
 		<div class="content-mid-wrapper Title-position">
 	        <div class="Title">
 	            <p>行业解决方案</p>
@@ -126,7 +126,7 @@ get_header();
 	</div>
 	<!-- project end -->
 	<!--news start -->
-	<div class="content-wrapper">
+	<div class="content-wrapper" style="display:;">
 		<div class="content-mid-wrapper Title-position">
 	        <div class="Title">
 	            <p>思华动态</p>

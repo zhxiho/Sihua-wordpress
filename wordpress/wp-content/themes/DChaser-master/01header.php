@@ -80,3 +80,45 @@
                             <a href="" class="item-info">大数据02</a>
                             <a href="" class="item-info">大数据03</a>
                         </div>
+
+
+
+
+
+                        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>   
+      <!-- 轮播（Carousel）项目 -->
+      <div class="carousel-inner">
+          <div class="item active">
+              <img src="<?php bloginfo('template_url');?>/static/img/img/banner1.png">
+          </div>
+          <div class="item">
+              <img src="<?php bloginfo('template_url');?>/static/img/img/banner2.png">
+          </div>
+          <div class="item">
+              <img src="<?php bloginfo('template_url');?>/static/img/img/banner1.png">
+          </div>
+      </div>
+      <!-- 轮播（Carousel）导航 -->
+      <a class="carousel-control left" href="#myCarousel" 
+          data-slide="prev">
+          <img class="banner-prev" src="<?php bloginfo('template_url'); ?>/static/img/icon/left.png" alt="上一张图片" />
+      </a>
+      <a class="carousel-control right" href="#myCarousel" 
+          data-slide="next">
+          <img class="banner-next" src="<?php bloginfo('template_url'); ?>/static/img/icon/right.png" alt="下一张图片" />
+      </a>
+    <img class="carousel-control bottom" src="<?php bloginfo('template_url'); ?>/static/img/icon/down.png" alt="往下看" />
+      <!-- 控制按钮 -->
+      <div style="text-align:center;display:none;">
+          <input type="button" class="btn start-slide" value="Start">
+          <!-- <input type="button" class="btn pause-slide" value="Pause">
+          <input type="button" class="btn prev-slide" value="Previous Slide">
+          <input type="button" class="btn next-slide" value="Next Slide">
+          <input type="button" class="btn slide-one" value="Slide 1">
+          <input type="button" class="btn slide-two" value="Slide 2">            
+          <input type="button" class="btn slide-three" value="Slide 3"> -->
+      </div>
